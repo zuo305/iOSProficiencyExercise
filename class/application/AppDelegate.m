@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  ForVivant
 //
-//  Created by 左村 on 14/12/4.
-//  Copyright (c) 2014年 左村. All rights reserved.
+//  Created by John on 14/12/4.
+//  Copyright (c) 2014年 John. All rights reserved.
 //
 
 #import "AppDelegate.h"

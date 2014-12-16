@@ -2,8 +2,8 @@
 //  firstViewController.m
 //  iOSProficiencyExercise
 //
-//  Created by 左村 on 14/12/16.
-//  Copyright (c) 2014年 左村. All rights reserved.
+//  Created by John on 14/12/16.
+//  Copyright (c) 2014year John. All rights reserved.
 //
 
 #import "firstViewController.h"
