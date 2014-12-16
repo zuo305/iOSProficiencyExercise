@@ -27,7 +27,7 @@
 #define kTitleWidth  (kScreenWidth-2*kScreenOff)
 #define kContentWidth  (kScreenWidth-5*kScreenOff-kIconImageWidth)
 
-#define kMinCellHeight (kScreenOff+kIconImageHeight+kFontSizeOff)
+#define kMinCellHeight (kScreenOff+kTitleFontSize+kFontSizeOff+kScreenOff+kIconImageHeight+kScreenOff)
 
 
 @implementation ContentTableViewCell
@@ -79,7 +79,7 @@
     [contentdescLabel_ setFrame:frame];
     [contentdescLabel_ setAttributedText:attrbutedStr];
 
-    float imageY=contentdescLabel_.bottom-kIconImageHeight;
+    float imageY=titleLabel_.bottom+kScreenOff;
     [iconImageView_ setFrame:CGRectMake(kScreenWidth-3*kScreenOff-kIconImageWidth, imageY, kIconImageWidth, kIconImageHeight)];
     if(rowEntity.imageHref.length>0)
     {
