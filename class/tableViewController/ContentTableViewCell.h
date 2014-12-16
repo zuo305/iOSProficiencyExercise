@@ -21,6 +21,5 @@
 
 -(void)setRowEntity:(RowEntity*)rowEntity;
 +(float)CellHeightByRowEntity:(RowEntity*)rowEntity;
-+(float)calculateHeightByText:(NSString*)text width:(float)width minHeight:(float)minHeight fontSize:(float)fontSize;
 
 @end
