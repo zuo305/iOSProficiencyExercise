@@ -7,6 +7,8 @@
 //
 #import "RowEntity.h"
 
+#define  kNoData  @"no data"
+
 @implementation RowEntity
 
 
@@ -17,9 +19,33 @@
     {
         if(json != nil)
         {
-            _title  =  [json objectForKey:@"title"];
-            _contentdesc  = [json objectForKey:@"description"];
-            _imageHref  = [json objectForKey:@"imageHref"];
+            
+            if ([json objectForKey:@"title"] == [NSNull null]) {
+                // it's null
+                _title = kNoData;
+            }
+            else
+            {
+                _title  =  [json objectForKey:@"title"];
+            }
+            
+            if ([json objectForKey:@"description"] == [NSNull null]) {
+                // it's null
+                _contentdesc = kNoData;
+            }
+            else
+            {
+                _contentdesc  =  [json objectForKey:@"description"];
+            }
+            
+            if ([json objectForKey:@"imageHref"] == [NSNull null]) {
+                // it's null
+                _imageHref = kNoData;
+            }
+            else
+            {
+                _imageHref  =  [json objectForKey:@"imageHref"];
+            }
             
         }
     }
