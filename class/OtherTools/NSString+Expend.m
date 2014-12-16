@@ -13,9 +13,9 @@
 -(NSMutableAttributedString *)attributedStringFromStingWithFont:(UIFont *)font
                                                 withLineSpacing:(CGFloat)lineSpacing
 {
-    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:self attributes:@{NSFontAttributeName:font}];
+    NSMutableAttributedString *attributedStr = [[[NSMutableAttributedString alloc] initWithString:self attributes:@{NSFontAttributeName:font}] autorelease];
     
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    NSMutableParagraphStyle *paragraphStyle = [[[NSMutableParagraphStyle alloc] init] autorelease];
     [paragraphStyle setLineSpacing:lineSpacing];
     
     [attributedStr addAttribute:NSParagraphStyleAttributeName

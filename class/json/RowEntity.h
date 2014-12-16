@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface RowEntity : NSObject
+@interface RowEntity : NSObject 
 
 @property (nonatomic,copy) NSString *title;
 @property (nonatomic,copy) NSString *contentdesc;

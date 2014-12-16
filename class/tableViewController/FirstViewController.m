@@ -38,7 +38,7 @@
 
 - (void)initTabelView
 {
-    infoTableView_=[[UITableView alloc] initWithFrame:CGRectMake(0, kSystemLineHeight+kNavLineHeight, self.view.bounds.size.width, self.view.bounds.size.height-kSystemLineHeight-kNavLineHeight)];
+    infoTableView_=[[[UITableView alloc] initWithFrame:CGRectMake(0, kSystemLineHeight+kNavLineHeight, self.view.bounds.size.width, self.view.bounds.size.height-kSystemLineHeight-kNavLineHeight)] autorelease];
     infoTableView_.delegate=self;
     infoTableView_.dataSource=self;
     [self.view addSubview:infoTableView_];
@@ -47,7 +47,7 @@
     
     if (refreshHeaderView_ == nil) {
         
-        EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - infoTableView_.bounds.size.height, self.view.frame.size.width, infoTableView_.bounds.size.height)];
+        EGORefreshTableHeaderView *view = [[[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - infoTableView_.bounds.size.height, self.view.frame.size.width, infoTableView_.bounds.size.height)] autorelease];
         view.delegate = self;
         [infoTableView_ addSubview:view];
         refreshHeaderView_ = view;
@@ -69,28 +69,27 @@
     manager.responseSerializer.acceptableContentTypes=[NSSet setWithObject:@"text/plain"];
     [manager GET:kDataURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        DataJsonObject *resultObject=[[DataJsonObject alloc] initWithJson:(NSDictionary*)responseObject];
+        DataJsonObject *resultObject=[[[DataJsonObject alloc] initWithJson:(NSDictionary*)responseObject] autorelease];
         
         self.title=resultObject.title;
 
         if(dataArray_==nil)
         {
-            dataArray_=[[NSMutableArray alloc] init];
+            dataArray_=[[NSMutableArray alloc] init] ;
         }
         else
         {
             [dataArray_ removeAllObjects];
         }
-//        for(RowEntity *rowEntity in resultObject.rowsArray)
-//        {
-//            RowEntity *addRowEntity=[[[RowEntity alloc] init] autorelease];
-//            addRowEntity.title=[NSString stringWithFormat:@"%@",rowEntity.title];
-//            addRowEntity.contentdesc=[NSString stringWithFormat:@"%@",rowEntity.contentdesc];
-//            addRowEntity.imageHref=[NSString stringWithFormat:@"%@",rowEntity.imageHref];
-//            [dataArray_ addObject:addRowEntity];
-//        }
-        
-        dataArray_=resultObject.rowsArray;
+        for(RowEntity *rowEntity in resultObject.rowsArray)
+        {
+            RowEntity *addRowEntity=[[[RowEntity alloc] init] autorelease];
+            addRowEntity.title=[NSString stringWithFormat:@"%@",rowEntity.title];
+            addRowEntity.contentdesc=[NSString stringWithFormat:@"%@",rowEntity.contentdesc];
+            addRowEntity.imageHref=[NSString stringWithFormat:@"%@",rowEntity.imageHref];
+            [dataArray_ addObject:addRowEntity];
+            
+        }
         
         
         [infoTableView_ reloadData];
@@ -192,12 +191,21 @@
     
 }
 
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    [infoTableView_ removeFromSuperview];
+    infoTableView_=nil;
+    [dataArray_ removeAllObjects];
+    dataArray_=nil;
+    [refreshHeaderView_ removeFromSuperview];
+    refreshHeaderView_=nil;
+
+    [super dealloc];
 }
 
 /*

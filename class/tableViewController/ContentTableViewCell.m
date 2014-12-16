@@ -41,20 +41,20 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
-        titleLabel_=[[UILabel alloc] initWithFrame:CGRectMake(kScreenOff, kScreenOff,kTitleWidth,kTitleFontSize+kFontSizeOff)];
+        titleLabel_=[[[UILabel alloc] initWithFrame:CGRectMake(kScreenOff, kScreenOff,kTitleWidth,kTitleFontSize+kFontSizeOff)] autorelease];
         titleLabel_.font=[UIFont boldSystemFontOfSize:kTitleFontSize];
         titleLabel_.textColor=[UIColor blueColor];
         titleLabel_.numberOfLines=0;
         [self addSubview:titleLabel_];
         
-        contentdescLabel_=[[UILabel alloc] initWithFrame:CGRectMake(titleLabel_.x, titleLabel_.bottom+kScreenOff,kContentWidth,kContentFontSize+kFontSizeOff)];
+        contentdescLabel_=[[[UILabel alloc] initWithFrame:CGRectMake(titleLabel_.x, titleLabel_.bottom+kScreenOff,kContentWidth,kContentFontSize+kFontSizeOff)] autorelease];
         contentdescLabel_.font=[UIFont systemFontOfSize:kContentFontSize];
         contentdescLabel_.textColor= [UIColor blackColor];
         contentdescLabel_.numberOfLines=0;
         
         [self addSubview:contentdescLabel_];
         
-        iconImageView_ = [[UIImageView alloc] initWithFrame:CGRectZero];
+        iconImageView_ = [[[UIImageView alloc] initWithFrame:CGRectZero] autorelease];
         iconImageView_.backgroundColor=[UIColor whiteColor];
         iconImageView_.contentMode = UIViewContentModeScaleAspectFill;
         iconImageView_.clipsToBounds=YES;
@@ -117,6 +117,16 @@
     // Configure the view for the selected state
 }
 
+- (void)dealloc
+{
+    [titleLabel_ removeFromSuperview];
+    titleLabel_ = nil;
+    [contentdescLabel_ removeFromSuperview];
+    contentdescLabel_ = nil;
+    [iconImageView_ removeFromSuperview];
+    iconImageView_= nil;
+    [super dealloc];
+}
 
 
 

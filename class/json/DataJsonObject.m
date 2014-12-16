@@ -22,13 +22,16 @@
             _rowsArray = [NSMutableArray array];
             for(NSDictionary *item in [json objectForKey:@"rows"])
             {
-                [_rowsArray addObject:[[RowEntity alloc] initWithJson:item]];
+                RowEntity *rowEntity=[[[RowEntity alloc] initWithJson:item] autorelease];
+                [_rowsArray addObject:rowEntity];
             }
             
         }
     }
     return self;
 }
+
+
 
 
 
