@@ -5,9 +5,9 @@
 //  Created by John
 //  Copyright (c) 2012 John. All rights reserved.
 //
-#import "rowEntity.h"
+#import "RowEntity.h"
 
-@implementation rowEntity
+@implementation RowEntity
 
 
 -(id)initWithJson:(NSDictionary *)json;
@@ -17,9 +17,9 @@
     {
         if(json != nil)
         {
-            self._title  = [json objectForKey:@"title"];
-            self._description  = [json objectForKey:@"description"];
-            self._imageHref  = [json objectForKey:@"imageHref"];
+            _title  =  [json objectForKey:@"title"];
+            _contentdesc  = [json objectForKey:@"description"];
+            _imageHref  = [json objectForKey:@"imageHref"];
             
         }
     }

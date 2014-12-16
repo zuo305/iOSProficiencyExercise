@@ -8,13 +8,13 @@
 
 
 #import <Foundation/Foundation.h>
-#import "rowEntity.h"
+#import "RowEntity.h"
 
 @interface DataJsonObject : NSObject
 
 
-@property (nonatomic,retain) NSString *_title;
-@property (nonatomic,retain) NSMutableArray *_rowsArray;
+@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSMutableArray *rowsArray;
  
 
 

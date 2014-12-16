@@ -10,11 +10,11 @@
 #import <Foundation/Foundation.h>
 
 
-@interface rowEntity : NSObject
+@interface RowEntity : NSObject
 
-@property (nonatomic,retain) NSString *_title;
-@property (nonatomic,retain) NSString *_description;
-@property (nonatomic,retain) NSString *_imageHref;
+@property (nonatomic,copy) NSString *title;
+@property (nonatomic,copy) NSString *contentdesc;
+@property (nonatomic,copy) NSString *imageHref;
 
 
 

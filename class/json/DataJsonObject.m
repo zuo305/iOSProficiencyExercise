@@ -7,7 +7,9 @@
 //
 #import "DataJsonObject.h"
 
+
 @implementation DataJsonObject
+
 
 -(id)initWithJson:(NSDictionary *)json;
 {
@@ -16,11 +18,11 @@
     {
         if(json != nil)
         {
-            self._title  = [json objectForKey:@"title"];
-            self._rowsArray = [NSMutableArray array];
+            _title  = [json objectForKey:@"title"];
+            _rowsArray = [NSMutableArray array];
             for(NSDictionary *item in [json objectForKey:@"rows"])
             {
-                [self._rowsArray addObject:[[rowEntity alloc] initWithJson:item]];
+                [_rowsArray addObject:[[RowEntity alloc] initWithJson:item]];
             }
             
         }

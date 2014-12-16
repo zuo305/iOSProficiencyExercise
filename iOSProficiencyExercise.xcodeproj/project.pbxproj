@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1E0449D13524E4AFD620814F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CCEA99DAA9296F6A055400 /* libPods.a */; };
+		E44B65BD1A401C26005C70AB /* ContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E44B65BC1A401C26005C70AB /* ContentTableViewCell.m */; };
+		E44B65C71A402229005C70AB /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = E44B65C41A402229005C70AB /* UIView+Frame.m */; };
+		E44B65C81A402229005C70AB /* NSString+Expend.m in Sources */ = {isa = PBXBuildFile; fileRef = E44B65C61A402229005C70AB /* NSString+Expend.m */; };
 		E4F408B31A3FB32A007955AA /* iOSProficiencyExerciseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F408B21A3FB32A007955AA /* iOSProficiencyExerciseTests.m */; };
 		E4F408BD1A3FB52A007955AA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F408BC1A3FB52A007955AA /* Default-568h@2x.png */; };
 		E4F408C61A3FB56C007955AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F408C11A3FB56C007955AA /* AppDelegate.m */; };
@@ -31,6 +34,12 @@
 		15F866787189B796455ACB17 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		19CCEA99DAA9296F6A055400 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E0723AEAA5770DA7E232B2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		E44B65BB1A401C26005C70AB /* ContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTableViewCell.h; sourceTree = "<group>"; };
+		E44B65BC1A401C26005C70AB /* ContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTableViewCell.m; sourceTree = "<group>"; };
+		E44B65C31A402229005C70AB /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		E44B65C41A402229005C70AB /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		E44B65C51A402229005C70AB /* NSString+Expend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Expend.h"; sourceTree = "<group>"; };
+		E44B65C61A402229005C70AB /* NSString+Expend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Expend.m"; sourceTree = "<group>"; };
 		E4F408931A3FB32A007955AA /* iOSProficiencyExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProficiencyExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F408AC1A3FB32A007955AA /* iOSProficiencyExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSProficiencyExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F408B11A3FB32A007955AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +92,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E44B65BE1A401E7F005C70AB /* OtherTools */ = {
+			isa = PBXGroup;
+			children = (
+				E44B65C31A402229005C70AB /* UIView+Frame.h */,
+				E44B65C41A402229005C70AB /* UIView+Frame.m */,
+				E44B65C51A402229005C70AB /* NSString+Expend.h */,
+				E44B65C61A402229005C70AB /* NSString+Expend.m */,
+			);
+			path = OtherTools;
+			sourceTree = "<group>";
+		};
 		E4F4088A1A3FB32A007955AA = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +145,8 @@
 		E4F408BE1A3FB56C007955AA /* class */ = {
 			isa = PBXGroup;
 			children = (
-				E4F408CC1A3FDBAD007955AA /* json */,
+				E44B65BE1A401E7F005C70AB /* OtherTools */,
+				E4F408CC1A3FDBAD007955AA /* Json */,
 				E4F408BF1A3FB56C007955AA /* Application */,
 				E4F408C21A3FB56C007955AA /* FirstViewController */,
 			);
@@ -147,6 +168,8 @@
 			children = (
 				E4F408C91A3FB5AB007955AA /* FirstViewController.h */,
 				E4F408CA1A3FB5AB007955AA /* FirstViewController.m */,
+				E44B65BB1A401C26005C70AB /* ContentTableViewCell.h */,
+				E44B65BC1A401C26005C70AB /* ContentTableViewCell.m */,
 			);
 			name = FirstViewController;
 			path = tableViewController;
@@ -160,7 +183,7 @@
 			path = otherResouce;
 			sourceTree = "<group>";
 		};
-		E4F408CC1A3FDBAD007955AA /* json */ = {
+		E4F408CC1A3FDBAD007955AA /* Json */ = {
 			isa = PBXGroup;
 			children = (
 				E4F408CD1A3FDBAD007955AA /* DataJsonObject.h */,
@@ -168,6 +191,7 @@
 				E4F408CF1A3FDBAD007955AA /* RowEntity.h */,
 				E4F408D01A3FDBAD007955AA /* RowEntity.m */,
 			);
+			name = Json;
 			path = json;
 			sourceTree = "<group>";
 		};
@@ -309,6 +333,9 @@
 				E4F408D11A3FDBAD007955AA /* DataJsonObject.m in Sources */,
 				E4F408D21A3FDBAD007955AA /* RowEntity.m in Sources */,
 				E4F408C81A3FB56C007955AA /* main.m in Sources */,
+				E44B65C81A402229005C70AB /* NSString+Expend.m in Sources */,
+				E44B65C71A402229005C70AB /* UIView+Frame.m in Sources */,
+				E44B65BD1A401C26005C70AB /* ContentTableViewCell.m in Sources */,
 				E4F408CB1A3FB5AB007955AA /* FirstViewController.m in Sources */,
 				E4F408C61A3FB56C007955AA /* AppDelegate.m in Sources */,
 			);

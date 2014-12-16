@@ -7,12 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGORefreshTableHeaderView.h"
 
-@interface FirstViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+@interface FirstViewController : UIViewController <UITableViewDelegate,UITableViewDataSource,EGORefreshTableHeaderDelegate>
 {
 @private
-    UITableView *_infoTableView;
-    NSArray *_dataArray;
+    UITableView *infoTableView_;
+    NSMutableArray *dataArray_;
+    EGORefreshTableHeaderView *refreshHeaderView_;
+    BOOL reloading_;
 }
+
+- (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
+
 
 @end
