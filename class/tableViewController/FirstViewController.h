@@ -18,8 +18,6 @@
     BOOL reloading_;
 }
 
-- (void)reloadTableViewDataSource;
-- (void)doneLoadingTableViewData;
 
 
 @end
